@@ -1,0 +1,18 @@
+<!DOCTYPE html> {# Expect modern HTML5 document #}
+<html> {# The master container for the webpage #}
+    <head> {# The head section contains meta-information about the document #}
+        <title>My Flask App</title> {# The title of the webpage that appears in the browser tab #}
+    </head>
+    <body>
+        <h1>Home Page</h1> {# A header for the home page #}
+        <p>Welcome to my Flask app!</p> {# A paragraph welcoming users to the Flask app #}
+        {# {% %} is a Jinja2 template syntax used to make page dynamic by allowing Python-like code to be embedded in the HTML #}
+        {%for post in posts%} {# A loop that iterates over a collection of posts passed from the Flask backend #}
+        {# {{}} it acts as print statement in python, it will prints it directly onto the screen wrapped in standard HTML formatting. #}
+            <h2>{{ post.title }}</h2>
+            <p>By {{ post.author }} on {{ post.date_posted }}</p>
+            <p>{{ post.content }}</p>
+        {# the closing tag for the for loop, it indicates the end of the block of code that should be repeated for each item in the collection. #}
+        {% endfor %}
+    </body>
+</html>
